@@ -23,7 +23,7 @@ android {
     buildToolsVersion "19.0.0"
 
     defaultConfig {
-        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
+//        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
         minSdkVersion 8
         targetSdkVersion 18
     }
