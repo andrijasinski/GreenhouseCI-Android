@@ -29,14 +29,19 @@ android {
     }
 
     productFlavors {
+
+        main {
+            versionName "main-version"
+        }
+
         flavor1 {
             packageName "com.example.flavor1"
-            versionCode 20
+            versionName "flavor1-version"
         }
 
         flavor2 {
             packageName "com.example.flavor2"
-            minSdkVersion 14
+            versionName "flavor2-version"
         }
     }
 }
