@@ -32,12 +32,12 @@ android {
 
         flavor1 {
             packageName "com.example.flavor1"
-            versionName "flavor1-version"
+            versionName "2.2-flavor1"
         }
 
         flavor2 {
             packageName "com.example.flavor2"
-            versionName "flavor2-version"
+            versionName "1.3-flavor2"
         }
     }
 }
