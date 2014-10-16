@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.greenhouseci"
     android:versionCode="1"
-    android:versionName="gazillio!!n123./ääää" >
+    android:versionName="gazillio!!n123./õüÕÜ\äö|ÄÖ" >
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="19" />
