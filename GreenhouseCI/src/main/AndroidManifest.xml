@@ -3,9 +3,6 @@
     package="com.greenhouseci"
     android:versionCode="1"
     android:versionName="2.0" >
-    <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
@@ -22,5 +19,9 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="19" />
 
 </manifest>
