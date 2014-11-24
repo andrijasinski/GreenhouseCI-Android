@@ -1,31 +1,31 @@
+apply plugin: 'com.android.application'
+
 buildscript {
     repositories {
         mavenCentral()
     }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:0.13.2'
     }
 }
-apply plugin: 'android'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile files('libs/espresso-1.1-bundled.jar')
 }
 
-// This is unnecessary
-
 android {
-//	somethingRandom "something.random.here.as.well"
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
-//        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
         minSdkVersion 8
-        targetSdkVersion 18
+        targetSdkVersion 21
     }
 
     productFlavors {
