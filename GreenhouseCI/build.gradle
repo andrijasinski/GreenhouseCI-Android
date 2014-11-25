@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile files('libs/espresso-1.1-bundled.jar')
+    androidTestCompile files('libs/espresso-1.1-bundled.jar')
 }
 
 android {
