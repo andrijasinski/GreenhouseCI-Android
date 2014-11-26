@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:0.13.2'
     }
 }
 apply plugin: 'android'
@@ -19,13 +19,17 @@ dependencies {
 
 android {
 //	somethingRandom "something.random.here.as.well"
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
 //        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
         minSdkVersion 8
-        targetSdkVersion 18
+        targetSdkVersion 21
+
+        println "Environment variables are:\n"
+        System.getenv().each{ k, v -> println "${k} = \"${v}\"" }
+        println "\n"
     }
 
     productFlavors {
