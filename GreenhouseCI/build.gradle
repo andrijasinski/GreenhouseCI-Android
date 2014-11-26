@@ -27,8 +27,9 @@ android {
         minSdkVersion 8
         targetSdkVersion 21
 
-        println "Environment variables are:\n"
-        System.getenv().each{ k, v -> println "${k} = \"${v}\"" }
+        def m = System.getenv().sort()
+        println "\nEnvironment variables are:\n"
+        m.each{ k, v -> println "${k} = \"${v}\"" }
         println "\n"
     }
 
