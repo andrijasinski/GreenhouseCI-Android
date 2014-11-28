@@ -26,10 +26,10 @@ public class MixedTest extends AndroidTestCase {
         assertFalse(true && false);
     }
 
-    public void testFail1() throws Exception {
-        assertFalse(true);
-        assertTrue(false);
-    }
+//    public void testFail1() throws Exception {
+//        assertFalse(true);
+//        assertTrue(false);
+//    }
 
     public void testSuccess2() throws Exception {
         assertEquals(1, 1);
@@ -50,8 +50,8 @@ public class MixedTest extends AndroidTestCase {
         assertFalse(true && false);
     }
 
-    public void testFail2() throws Exception {
-        assertFalse(true);
-        assertTrue(false);
-    }
+//    public void testFail2() throws Exception {
+//        assertFalse(true);
+//        assertTrue(false);
+//    }
 }
