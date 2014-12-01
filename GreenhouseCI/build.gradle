@@ -13,7 +13,6 @@ repositories {
 }
 
 dependencies {
-//    androidTestCompile files('libs/robotium-solo-5.2.1.jar')
     androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.0.1'
 }
 
@@ -22,8 +21,12 @@ android {
     buildToolsVersion "19.1.0"
 
     defaultConfig {
-//        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
         minSdkVersion 8
         targetSdkVersion 19
     }
+}
+
+task('hello') <<
+{
+    println "hello"
 }
