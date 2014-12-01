@@ -26,7 +26,7 @@ android {
     }
 }
 
-task('printHello') <<
+task('ello') <<
 {
     println "hello"
 }
