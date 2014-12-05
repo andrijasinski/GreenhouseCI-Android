@@ -25,7 +25,7 @@ android {
     defaultConfig {
 //        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
         minSdkVersion 8
-        targetSdkVersion 18
+        targetSdkVersion 17
     }
 
     productFlavors {
