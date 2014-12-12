@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'com.android.tools.build:gradle:1.0.+'
     }
 }
 apply plugin: 'android'
@@ -16,13 +16,12 @@ dependencies {
 }
 
 android {
-//	somethingRandom "something.random.here.as.well"
-    compileSdkVersion 19
-    buildToolsVersion "19.0.0"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
         testInstrumentationRunner = "android.test.InstrumentationTestRunner"
         minSdkVersion 8
-        targetSdkVersion 10
+        targetSdkVersion 21
     }
 }
