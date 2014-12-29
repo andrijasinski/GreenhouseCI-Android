@@ -31,13 +31,11 @@ android {
     productFlavors {
 
         flavor1 {
-            useJack = true
             applicationId "com.example.flavor1"
             versionName "2.2-flavor1"
         }
 
         flavor2 {
-            useJack = true
             applicationId "com.example.flavor2"
             versionName "1.3-flavor2"
         }
