@@ -47,6 +47,14 @@ class SimpleTest extends Sauce\Sausage\WebDriverTestCase
 
     public function testUiComputation()
     {
-        assert(true);
+        $this->assertEquals(true, true);
+    }
+
+    public function testUi()
+    {
+        echo("\nIn testUi\n");
+        $elem = $this->byClassName('android.widget.TextView');
+        $this->assertNotNull($elem);
+        $this->assertEquals('GreenhouseCI', $elem->text());
     }
 }
