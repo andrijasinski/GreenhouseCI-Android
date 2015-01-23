@@ -17,17 +17,17 @@ public class FailTest extends AndroidTestCase {
     }
 
     public void testFail1() throws Exception {
-        assertFalse(true);
+        assertFalse("This is a message", true);
         assertTrue(false);
     }
 
     public void testFail2() throws Exception {
-        assertFalse(true);
+        assertFalse("another message", true);
         assertTrue(false);
     }
 
     public void testFail3() throws Exception {
-        assertFalse(true);
+        assertFalse("not false but true", true);
         assertTrue(false);
     }
 }
