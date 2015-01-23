@@ -50,6 +50,12 @@ class SimpleTest extends Sauce\Sausage\WebDriverTestCase
         $this->assertEquals(true, true);
     }
 
+    public function testFailedAssertion()
+    {
+        $this->assertEquals(true, false);
+    }
+
+
     public function testUi()
     {
         echo("\nIn testUi\n");
