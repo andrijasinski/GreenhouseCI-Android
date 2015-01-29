@@ -4,7 +4,7 @@
 //     vendor/bin/phpunit SimpleTest.php
 
 require_once "vendor/autoload.php";
-define("APP_PATH", realpath(dirname(__FILE__).'/../../build/outputs/apk/GreenhouseCI-flavor1-debug.apk'));
+define("APP_PATH", realpath(dirname(__FILE__).'/../../build/outputs/apk/GreenhouseCI-debug.apk'));
 if (!APP_PATH) {
     die("App did not exist!");
 }

@@ -89,7 +89,7 @@ public class AppiumTest implements SauceOnDemandSessionIdProvider {
         String userDir = System.getProperty("user.dir");
 
         URL serverAddress;
-        String localApp = "../../build/outputs/apk/GreenhouseCI-flavor1-debug.apk";
+        String localApp = "../../build/outputs/apk/GreenhouseCI-debug.apk";
         if (runOnSauce) {
             String user = auth.getUsername();
             String key = auth.getAccessKey();
