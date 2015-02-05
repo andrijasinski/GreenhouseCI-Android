@@ -2,7 +2,7 @@
 *.apk
 *.ap_
 
-!GreenhouseCI-debug.apk
+# !GreenhouseCI-debug.apk
 
 # files for the dex VM
 *.dex
