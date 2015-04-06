@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.greenhouseci.SuccessTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.568 sec - in com.greenhouseci.SuccessTest
