@@ -24,31 +24,9 @@ class SimpleAndroidTests(unittest.TestCase):
         # end the session
         self.driver.quit()
 
-    def test_find_text_views(self):
-        tvs = self.driver.find_elements_by_class_name('android.widget.TextView')
-        self.assertEqual(len(tvs), 2)
-
-        navbar_tv = tvs[0]
-        app_tv = tvs[1]
-
-        self.assertTrue(navbar_tv.is_displayed())
-        self.assertEqual(navbar_tv.text, 'GreenhouseCI')
-
-        self.assertTrue(app_tv.is_displayed())
-        self.assertEqual(app_tv.text, 'Thank you for building with GreenhouseCI!')
-
-
-    def test_start_activity(self):
-        activity = ".MainActivity"
-        self.assertEqual(self.driver.current_activity, activity)
-
-
-        self.driver.back()
-        self.assertNotEqual(self.driver.current_activity, activity)
-
-        self.driver.start_activity('com.greenhouseci','.MainActivity')
-        self.assertEqual(self.driver.current_activity, activity)
-
+    def test_error(self):
+        # text is undefined
+        self.assertEqual(text, 'This text is not in app')
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(SimpleAndroidTests)
