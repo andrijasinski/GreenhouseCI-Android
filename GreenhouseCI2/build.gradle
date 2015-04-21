@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+// This is unnecessary
+
+android {
+//	somethingRandom "something.random.here.as.well"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+//        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
+        minSdkVersion 8
+        targetSdkVersion 21
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+        }
+    }
+
+    productFlavors {
+
+        flavor1 {
+            applicationId "com.example.flavor1"
+            versionName "2.2-flavor1"
+        }
+
+        flavor2 {
+            applicationId "com.example.flavor2"
+            versionName "1.3-flavor2"
+        }
+    }
+}
+
+task randomTask << {
+    println "randomTask"
+}
+
+task otherTask << {
+    println 'printing from otherTask'
+}
+otherTask.group = "Other"
+
