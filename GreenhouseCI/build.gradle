@@ -47,3 +47,13 @@ android {
         }
     }
 }
+
+task randomTask << {
+    println "randomTask"
+}
+
+task otherTask << {
+    println 'printing from otherTask'
+}
+otherTask.group = "Other"
+
