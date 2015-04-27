@@ -23,9 +23,13 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-//        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
+        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
         minSdkVersion 8
         targetSdkVersion 21
+    }
+
+    sourceSets {
+        androidTest.setRoot('src/_androidTest')
     }
 
     buildTypes {
@@ -56,4 +60,5 @@ task otherTask << {
     println 'printing from otherTask'
 }
 otherTask.group = "Other"
+
 
