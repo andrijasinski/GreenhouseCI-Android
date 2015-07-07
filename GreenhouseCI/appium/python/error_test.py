@@ -18,7 +18,7 @@ class SimpleAndroidTests(unittest.TestCase):
         desired_caps['deviceName'] = 'Android Emulator'
         desired_caps['app'] = PATH('../../build/outputs/apk/GreenhouseCI-debug.apk')
 
-        self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+        self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 
     def tearDown(self):
         # end the session
