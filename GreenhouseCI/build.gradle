@@ -51,7 +51,7 @@ android {
 task crashIfRequired << {
     def divideByZero = System.getenv()['DIVIDE_BY_ZERO']
     if (divideByZero) {
-        println "divideByZero is set (${divideByZero}), will crash"
+        println "divideByZero is set [divideByZero=\"${divideByZero}\"], will crash"
         1/0
     } else {
         println "divideByZero not set, will not crash"
