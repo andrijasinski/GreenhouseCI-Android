@@ -52,7 +52,7 @@ task crashIfRequired << {
     def divideByZero = System.getenv()['DIVIDE_BY_ZERO']
     println "\n==============================="
     println "divideByZero=\"${divideByZero}\""
-    if (divideByZero) {
+    if (!divideByZero) {
         println "divideByZero is set, will crash"
         println "===============================\n"
         1/0
