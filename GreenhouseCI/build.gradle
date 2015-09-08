@@ -62,4 +62,18 @@ task otherTask << {
 }
 otherTask.group = "Other"
 
+task printFileContents << {
+    def printFile = System.getenv()['PRINT_FILE']
+    println "\n======================================================================
+    if (!printFile) {
+        println "Nothing to do here, PRINT_FILE is not set!"
+    } else {
+        println "Contents of \"${printFile}\":"
+        println new File(printFile).text
+    }
+    println "======================================================================\n"
+}
 
+gradle.projectsEvaluated {
+    assemble.dependsOn(printFileContents)
+}
