@@ -19,6 +19,10 @@ dependencies {
 // errar!
 
 android {
+    testOptions {
+        // resultsDir "/tmp/kana"
+        resultsDir "hurr-durr-test-results-are-here"
+    }
 //	somethingRandom "something.random.here.as.well"
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
