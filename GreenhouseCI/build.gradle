@@ -3,10 +3,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.2'
+        classpath 'com.android.tools.build:gradle:1.5.0'
     }
 }
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 
 repositories {
     mavenCentral()
@@ -16,22 +16,47 @@ dependencies {
 }
 
 // This is unnecessary
+// errar!
 
 android {
+    // testOptions {
+    //     // resultsDir "/tmp/kana"
+    //     resultsDir "hurr-durr-test-results-are-here"
+    // }
 //	somethingRandom "something.random.here.as.well"
-    compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
-//        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
+        testInstrumentationRunner = "android.test.InstrumentationTestRunner"
         minSdkVersion 8
-        targetSdkVersion 21
+        targetSdkVersion 23
 
         println "\nEnvironment variables are:\n"
         System.getenv().sort().each {
             k, v -> println "${k}=\"${v}\""
         }
         println "\n"
+
+        def printFile = System.getenv()['PRINT_FILE']
+        println "\n======================================================================"
+        if (!printFile) {
+            println "Nothing to do here, PRINT_FILE is not set!"
+        } else {
+            println "Contents of \"${printFile}\":"
+            println new File(printFile).text
+        }
+        println "======================================================================\n"
+    }
+
+    sourceSets {
+        androidTest.setRoot('src/_androidTest')
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+        }
     }
 
     productFlavors {
@@ -63,5 +88,27 @@ task crashIfRequired << {
 }
 
 gradle.projectsEvaluated {
+    assemble.dependsOn(printFileContents)
     assemble.dependsOn(crashIfRequired)
+}
+
+task randomTask << {
+    println "randomTask"
+}
+
+task otherTask << {
+    println 'printing from otherTask'
+}
+otherTask.group = "Other"
+
+task printFileContents << {
+    def printFile = System.getenv()['PRINT_FILE']
+    println "\n======================================================================"
+    if (!printFile) {
+        println "Nothing to do here, PRINT_FILE is not set!"
+    } else {
+        println "Contents of \"${printFile}\":"
+        println new File(printFile).text
+    }
+    println "======================================================================\n"
 }
