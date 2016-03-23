@@ -32,6 +32,12 @@ android {
         minSdkVersion 8
         targetSdkVersion 23
 
+        println "\nEnvironment variables are:\n"
+        System.getenv().sort().each {
+            k, v -> println "${k}=\"${v}\""
+        }
+        println "\n"
+
         def printFile = System.getenv()['PRINT_FILE']
         println "\n======================================================================"
         if (!printFile) {
@@ -67,6 +73,25 @@ android {
     }
 }
 
+task crashIfRequired << {
+    def divideByZero = System.getenv()['DIVIDE_BY_ZERO']
+    println "\n==============================="
+    println "divideByZero=\"${divideByZero}\""
+    if (divideByZero) {
+        println "divideByZero is set, will crash"
+        println "===============================\n"
+        1/0
+    } else {
+        println "divideByZero not set, will not crash"
+        println "===============================\n"
+    }
+}
+
+gradle.projectsEvaluated {
+    assemble.dependsOn(printFileContents)
+    assemble.dependsOn(crashIfRequired)
+}
+
 task randomTask << {
     println "randomTask"
 }
@@ -86,8 +111,4 @@ task printFileContents << {
         println new File(printFile).text
     }
     println "======================================================================\n"
-}
-
-gradle.projectsEvaluated {
-    assemble.dependsOn(printFileContents)
 }
