@@ -53,6 +53,13 @@ android {
         androidTest.setRoot('src/_androidTest')
     }
 
+     buildTypes {
+         debug {
+             minifyEnabled true
+             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+         }
+     }
+
     productFlavors {
         flavor1 {
             applicationId "com.example.flavor1"
