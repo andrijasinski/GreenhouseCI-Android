@@ -47,7 +47,7 @@ android {
     }
 
     sourceSets {
-        androidTest.setRoot('src/_androidTest')
+        androidTest.setRoot('src/androidTest')
     }
 
      buildTypes {
